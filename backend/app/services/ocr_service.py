@@ -5,8 +5,9 @@ Uses EasyOCR for text extraction with support for both printed and handwritten t
 import io
 import re
 import logging
+import os
 from typing import Optional, Tuple
-from PIL import Image
+from PIL import Image, ImageEnhance
 import numpy as np
 from langdetect import detect
 from deep_translator import GoogleTranslator
@@ -15,6 +16,13 @@ logger = logging.getLogger(__name__)
 
 # Global OCR reader (lazy loaded)
 _ocr_reader = None
+_trocr_processor = None
+_trocr_model = None
+_trocr_model_id = None
+
+HF_OCR_ENABLE_TROCR = os.getenv("HF_OCR_ENABLE_TROCR", "true").lower() == "true"
+HF_OCR_MODEL_ID = os.getenv("HF_OCR_MODEL_ID", "microsoft/trocr-base-printed")
+HF_OCR_MAX_EDGE = int(os.getenv("HF_OCR_MAX_EDGE", "1400"))
 
 
 def get_ocr_reader():
@@ -30,6 +38,22 @@ def get_ocr_reader():
             logger.error(f"Failed to load EasyOCR: {e}")
             raise
     return _ocr_reader
+
+
+def get_trocr_components():
+    """Lazy load Hugging Face TrOCR model and processor"""
+    global _trocr_processor, _trocr_model, _trocr_model_id
+
+    if _trocr_processor is not None and _trocr_model is not None and _trocr_model_id == HF_OCR_MODEL_ID:
+        return _trocr_processor, _trocr_model, _trocr_model_id
+
+    from transformers import TrOCRProcessor, VisionEncoderDecoderModel
+
+    logger.info("Loading Hugging Face TrOCR model: %s", HF_OCR_MODEL_ID)
+    _trocr_processor = TrOCRProcessor.from_pretrained(HF_OCR_MODEL_ID)
+    _trocr_model = VisionEncoderDecoderModel.from_pretrained(HF_OCR_MODEL_ID)
+    _trocr_model_id = HF_OCR_MODEL_ID
+    return _trocr_processor, _trocr_model, _trocr_model_id
 
 
 def preprocess_image(image: Image.Image) -> Image.Image:
@@ -67,6 +91,97 @@ def preprocess_image(image: Image.Image) -> Image.Image:
     return Image.fromarray(binary)
 
 
+def _prepare_image_for_trocr(image: Image.Image) -> Image.Image:
+    image = image.convert("RGB")
+    width, height = image.size
+    longest_edge = max(width, height)
+    if longest_edge > HF_OCR_MAX_EDGE:
+        ratio = HF_OCR_MAX_EDGE / float(longest_edge)
+        new_size = (int(width * ratio), int(height * ratio))
+        image = image.resize(new_size)
+    return image
+
+
+def _extract_with_easyocr(image: Image.Image) -> Tuple[str, float]:
+    img_array = np.array(image)
+    reader = get_ocr_reader()
+    results = reader.readtext(img_array, detail=1, paragraph=True)
+
+    texts = []
+    confidences = []
+    for result in results:
+        if len(result) >= 2:
+            text = result[1] if isinstance(result[1], str) else str(result[1])
+            texts.append(text)
+            if len(result) >= 3 and isinstance(result[2], (int, float)):
+                confidences.append(float(result[2]))
+            else:
+                confidences.append(0.8)
+
+    extracted_text = "\n".join(texts)
+    avg_confidence = sum(confidences) / len(confidences) if confidences else 0.0
+    return extracted_text, avg_confidence
+
+
+def _extract_with_trocr(image: Image.Image) -> Tuple[str, float]:
+    processor, model, _ = get_trocr_components()
+    prepared = _prepare_image_for_trocr(image)
+    pixel_values = processor(images=prepared, return_tensors="pt").pixel_values
+    generated_ids = model.generate(pixel_values, max_new_tokens=1024)
+    text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
+    # TrOCR does not output token-level confidence directly in this pipeline.
+    return text, 0.75
+
+
+def _score_fir_text_quality(text: str) -> float:
+    if not text:
+        return 0.0
+
+    lowered = text.lower()
+    fir_keywords = [
+        "fir", "first information report", "police station", "ipc", "section",
+        "u/s", "complainant", "accused", "offence", "incident", "investigation",
+    ]
+    keyword_hits = sum(1 for keyword in fir_keywords if keyword in lowered)
+    section_hits = len(re.findall(r"\b(?:section|ipc|u/s)\s*\d{1,3}[a-z]?\b", lowered, flags=re.IGNORECASE))
+    numeric_hits = len(re.findall(r"\b\d{2,4}\b", lowered))
+
+    ipc_hits = 0
+    try:
+        # Late import avoids circular import overhead unless scoring is called.
+        from app.services.ipc_extractor import extract_section_numbers
+        extracted_sections, _ = extract_section_numbers(text)
+        ipc_hits = len(extracted_sections)
+    except Exception:
+        ipc_hits = 0
+
+    return (keyword_hits * 1.5) + (section_hits * 2.5) + min(3.0, numeric_hits * 0.05) + (ipc_hits * 3.0)
+
+
+def _build_easyocr_candidates(base_image: Image.Image, preprocess: bool) -> list[tuple[str, Image.Image]]:
+    """
+    Build multiple OCR candidates so noisy FIR scans can be read from different renderings.
+    """
+    candidates: list[tuple[str, Image.Image]] = [("orig", base_image.convert("RGB"))]
+
+    if preprocess:
+        try:
+            candidates.append(("preprocessed", preprocess_image(base_image)))
+        except Exception as pre_error:
+            logger.warning("Preprocess candidate generation failed: %s", pre_error)
+
+    # High-contrast + sharpened candidate often helps form-like FIR documents.
+    try:
+        gray = base_image.convert("L")
+        contrast = ImageEnhance.Contrast(gray).enhance(2.2)
+        sharp = ImageEnhance.Sharpness(contrast).enhance(1.8)
+        candidates.append(("contrast_sharp", sharp.convert("RGB")))
+    except Exception as enhance_error:
+        logger.warning("Enhanced candidate generation failed: %s", enhance_error)
+
+    return candidates
+
+
 def extract_text_from_image(image_bytes: bytes, preprocess: bool = True) -> Tuple[str, float, str]:
     """
     Extract text from FIR image using EasyOCR
@@ -86,41 +201,42 @@ def extract_text_from_image(image_bytes: bytes, preprocess: bool = True) -> Tupl
         if image.mode != 'RGB':
             image = image.convert('RGB')
         
-        # Preprocess if requested
-        if preprocess:
+        candidates = _build_easyocr_candidates(image, preprocess)
+
+        best_text = ""
+        best_conf = 0.0
+        best_method = "easyocr"
+        best_score = -1.0
+
+        for candidate_name, candidate_image in candidates:
             try:
-                image = preprocess_image(image)
-            except Exception as e:
-                logger.warning(f"Preprocessing failed, using original image: {e}")
-        
-        # Convert to numpy array for EasyOCR
-        img_array = np.array(image)
-        
-        # Get OCR reader
-        reader = get_ocr_reader()
-        
-        # Perform OCR
-        results = reader.readtext(img_array, detail=1, paragraph=True)
-        
-        # Extract text and calculate average confidence
-        texts = []
-        confidences = []
-        
-        for result in results:
-            if len(result) >= 2:
-                text = result[1] if isinstance(result[1], str) else str(result[1])
-                texts.append(text)
-                
-                # Confidence is the third element if available
-                if len(result) >= 3 and isinstance(result[2], (int, float)):
-                    confidences.append(float(result[2]))
-                else:
-                    confidences.append(0.8)  # Default confidence
-        
-        extracted_text = '\n'.join(texts)
-        avg_confidence = sum(confidences) / len(confidences) if confidences else 0.0
-        
-        return extracted_text, avg_confidence, "easyocr"
+                easy_text, easy_conf = _extract_with_easyocr(candidate_image)
+                easy_score = _score_fir_text_quality(clean_extracted_text(easy_text))
+
+                if easy_score > best_score:
+                    best_text = easy_text
+                    best_conf = easy_conf
+                    best_method = f"easyocr:{candidate_name}"
+                    best_score = easy_score
+            except Exception as candidate_error:
+                logger.warning("EasyOCR candidate '%s' failed: %s", candidate_name, candidate_error)
+
+        if HF_OCR_ENABLE_TROCR:
+            try:
+                trocr_text, trocr_conf = _extract_with_trocr(image)
+                trocr_score = _score_fir_text_quality(clean_extracted_text(trocr_text))
+                if trocr_score > best_score:
+                    best_text = trocr_text
+                    best_conf = trocr_conf
+                    best_method = f"trocr:{HF_OCR_MODEL_ID}"
+                    best_score = trocr_score
+            except Exception as trocr_error:
+                logger.warning("TrOCR fallback failed, using EasyOCR result: %s", trocr_error)
+
+        if not best_text.strip():
+            raise RuntimeError("All OCR extraction candidates failed to produce text")
+
+        return best_text, best_conf, best_method
         
     except Exception as e:
         logger.error(f"OCR extraction failed: {e}")

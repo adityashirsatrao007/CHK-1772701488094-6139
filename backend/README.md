@@ -5,13 +5,16 @@ AI-powered backend for FIR processing and IPC section extraction.
 ## Features
 
 - **OCR Text Extraction**: Extract text from FIR images (handwritten or printed) using EasyOCR
+- **HF OCR Fallback**: Optional Hugging Face TrOCR support (`microsoft/trocr-base-printed`) with auto-selection between EasyOCR and TrOCR based on FIR text quality
 - **IPC Section Identification**: Automatically identify Indian Penal Code sections from extracted text
 - **Metadata Extraction**: Extract complainant name, accused name, dates, police station, etc.
 - **IPC Database**: Comprehensive database of 100+ IPC sections with descriptions and punishments
+- **Evidence Forensics**: Deepfake screening for image and video evidence using a pretrained Hugging Face classifier, with optional Roboflow model enrichment
 
 ## Setup
 
 ### Prerequisites
+
 - Python 3.9+
 - pip
 
@@ -42,24 +45,58 @@ python main.py
 
 The API will be available at `http://localhost:8000`
 
+### Optional Deepfake Model Configuration
+
+The evidence-analysis route now uses a pretrained Hugging Face image classifier by default:
+
+- Model: `dima806/deepfake_vs_real_image_detection`
+- Threshold env var: `HF_IMAGE_DEEPFAKE_THRESHOLD` (default `0.35`)
+- Model override env var: `HF_IMAGE_DEEPFAKE_MODEL_ID`
+
+Optional Roboflow enrichment can be enabled with either:
+
+- `ROBOFLOW_MODEL_ID=project-name/version`
+- or `ROBOFLOW_PROJECT_ID` plus `ROBOFLOW_VERSION`
+
+And:
+
+- `ROBOFLOW_API_KEY`
+
+On first inference, Transformers will download the configured Hugging Face checkpoint.
+
+### Optional FIR OCR Model Configuration
+
+FIR extraction can also use a Hugging Face OCR model in addition to EasyOCR:
+
+- `HF_OCR_ENABLE_TROCR=true` to enable TrOCR fallback/selection
+- `HF_OCR_MODEL_ID=microsoft/trocr-base-printed` to change OCR model
+- `HF_OCR_MAX_EDGE=1400` max image edge for TrOCR input resizing
+
+The service runs EasyOCR and (optionally) TrOCR, then picks the text output with stronger FIR/legal signal.
+
 ## API Endpoints
 
 ### Health Check
+
 - `GET /` - Welcome message and available endpoints
 - `GET /health` - Health check
 
 ### FIR Processing
+
 - `POST /api/v1/fir/extract` - Extract text from FIR image
 - `POST /api/v1/fir/extract-ipc` - Extract IPC sections from text
 - `POST /api/v1/fir/analyze` - Complete FIR analysis (OCR + IPC extraction + metadata)
+- `POST /analyze` - Combined FIR OCR analysis or evidence deepfake screening, depending on the uploaded form context
 
 ### IPC Database
+
 - `GET /api/v1/ipc/sections` - List all IPC sections (with optional filtering)
 - `GET /api/v1/ipc/sections/{section_number}` - Get details of a specific section
 
 ## API Documentation
 
 Once the server is running, visit:
+
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
