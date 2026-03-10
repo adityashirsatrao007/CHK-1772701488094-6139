@@ -593,6 +593,13 @@ function Dashboard() {
                               <p className="text-xs text-stone-500 leading-relaxed line-clamp-3">
                                 {c.fir_summary.charges_summary || c.fir_summary.explanation}
                               </p>
+                              {c.fir_summary.key_factors && c.fir_summary.key_factors.length > 0 && (
+                                <ul className="mt-2 space-y-1">
+                                  {c.fir_summary.key_factors.filter(f => f.startsWith("IPC")).slice(0, 2).map((factor, i) => (
+                                    <li key={i} className="text-xs text-stone-600 truncate">⚖️ {factor}</li>
+                                  ))}
+                                </ul>
+                              )}
                             </div>
                           </div>
 
@@ -701,9 +708,24 @@ function Dashboard() {
                                         ),
                                       )}
                                     </div>
-                                    <p className="text-sm text-stone-600 leading-relaxed font-sans">
+                                    <p className="text-sm text-stone-600 leading-relaxed font-sans mb-4">
                                       {selectedCase.fir_summary.charges_summary || selectedCase.fir_summary.explanation}
                                     </p>
+                                    
+                                    {selectedCase.fir_summary.key_factors && selectedCase.fir_summary.key_factors.length > 0 && (
+                                      <div className="bg-white/60 p-3 rounded-lg border border-amber-100 mb-4">
+                                        <h4 className="text-xs font-bold text-amber-800 mb-2">Detailed Findings</h4>
+                                        <ul className="space-y-1.5">
+                                          {selectedCase.fir_summary.key_factors.map((factor, i) => (
+                                            <li key={i} className="text-xs text-stone-700 flex items-start gap-2">
+                                              <span className="text-amber-500 mt-0.5">•</span>
+                                              <span>{factor}</span>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    )}
+
                                     <div className="mt-4 flex justify-between items-center text-xs text-stone-600 border-t border-stone-200 pt-3">
                                       <span>OCR Confidence</span>
                                       <span className="text-amber-700 font-mono">
