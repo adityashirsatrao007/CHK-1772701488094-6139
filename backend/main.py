@@ -8,7 +8,7 @@ import os
 import re
 import uuid
 import urllib.parse
-from ipc_mapping import IPC_MAPPING
+from app.services.ipc_mapping import IPC_MAPPING
 from app.routes.auth import router as auth_router
 from app.routes.fir import router as fir_router
 from app.routes.legal_search import router as legal_search_router

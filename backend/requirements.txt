@@ -9,3 +9,5 @@ transformers
 langdetect
 deep-translator
 python-dotenv
+psycopg2-binary
+bcrypt
