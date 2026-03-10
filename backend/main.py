@@ -5,10 +5,14 @@ from pydantic import BaseModel
 import asyncio
 import random
 import os
+import re
+import uuid
+import urllib.parse
 from ipc_mapping import IPC_MAPPING
 from app.routes.auth import router as auth_router
 from app.routes.fir import router as fir_router
 from app.routes.legal_search import router as legal_search_router
+from app.services.evidence_forensics import analyze_uploaded_evidence
 
 app = FastAPI(title="Multimodal Evidence Analysis API")
 
@@ -38,6 +42,7 @@ class AnalysisResponse(BaseModel):
     explanation: str
     key_factors: list[str]
     detected_ipcs: list[str] = []
+    image_url: str | None = None
 
 import json
 
@@ -50,9 +55,37 @@ from app.routes.auth import get_db_connection
 from psycopg2.extras import RealDictCursor
 import logging
 
+
+def _save_uploaded_image(file_bytes: bytes, original_name: str, content_type: str, subdir: str) -> str | None:
+    ext = ""
+    if original_name and "." in original_name:
+        ext = "." + original_name.rsplit(".", 1)[-1].lower()
+
+    if not ((content_type or "").startswith("image/") or ext in {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff"}):
+        return None
+
+    if ext not in {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tiff"}:
+        ext = ".jpg"
+
+    target_dir = os.path.join(static_dir, subdir)
+    os.makedirs(target_dir, exist_ok=True)
+
+    base_name = re.sub(r"[^A-Za-z0-9._-]", "_", original_name or "upload")
+    if "." in base_name:
+        base_name = base_name.rsplit(".", 1)[0]
+
+    filename = f"{base_name}_{uuid.uuid4().hex[:12]}{ext}"
+    file_path = os.path.join(target_dir, filename)
+
+    with open(file_path, "wb") as out_file:
+        out_file.write(file_bytes)
+
+    return f"http://127.0.0.1:8000/static/{subdir}/{urllib.parse.quote(filename)}"
+
 @app.get("/cases")
 def get_cases(email: Optional[str] = None):
     try:
+        demo_accounts = {"analyst@nyaya.ai", "demo@nyaya.ai", "officer@nyaya.ai"}
         conn = get_db_connection()
         cur = conn.cursor(cursor_factory=RealDictCursor)
         
@@ -64,13 +97,20 @@ def get_cases(email: Optional[str] = None):
             cur.execute("SELECT case_data FROM cases ORDER BY created_at DESC")
             
         rows = cur.fetchall()
-        cur.close()
-        conn.close()
         
         cases = [row['case_data'] for row in rows]
         
-        # Hydrate demo data heavily requested for analyst login demo if their table is totally empty
-        if not cases and email == "analyst@nyaya.ai":
+        # For demo users, fall back to all DB cases (shared demo view), then JSON seeds if still empty.
+        if not cases and email in demo_accounts:
+            cur = conn.cursor(cursor_factory=RealDictCursor)
+            cur.execute("SELECT case_data FROM cases ORDER BY created_at DESC")
+            fallback_rows = cur.fetchall()
+            cur.close()
+            cases = [row['case_data'] for row in fallback_rows]
+
+        conn.close()
+
+        if not cases and email in demo_accounts:
             try:
                 with open("cases.json", "r") as f:
                     cases = json.load(f).get("cases", [])
@@ -159,14 +199,12 @@ def delete_case(case_id: str, email: Optional[str] = None):
 
 @app.post("/analyze", response_model=AnalysisResponse)
 async def analyze_evidence(file: UploadFile = File(...), context: str = Form("evidence")):
-    # Simulate processing delay
-    await asyncio.sleep(2)
-    
     file_type = file.content_type or "unknown"
     
     if context == "fir":
         # Read the uploaded image file
         contents = await file.read()
+        saved_fir_image_url = _save_uploaded_image(contents, file.filename or "fir_image", file_type, "firs")
         
         try:
             from app.services.ocr_service import extract_text_from_image, clean_extracted_text, detect_language, translate_to_english
@@ -207,16 +245,15 @@ async def analyze_evidence(file: UploadFile = File(...), context: str = Form("ev
                     is_manipulated=False,
                     explanation="Document Validation Failed: The uploaded file does not appear to be a First Information Report (FIR). Please upload a valid FIR document.",
                     key_factors=["Missing legal terminology", "Unidentified document layout structure"],
-                    detected_ipcs=[]
+                    detected_ipcs=[],
+                    image_url=saved_fir_image_url,
                 )
             ipc_sections = extract_ipc_sections(analysis_text)
             
             detected_ipc_keys = [str(s["section"]) for s in ipc_sections]
             
             if not detected_ipc_keys:
-                # If nothing detected natively due to low res image, fallback to at least mapping something
-                detected_ipc_keys = random.sample(list(IPC_MAPPING.keys()), k=random.randint(1, 3))
-                explanations = [f"IPC {ipc}: {IPC_MAPPING[ipc]}" for ipc in detected_ipc_keys]
+                explanations = ["No explicit IPC section references were detected from OCR text."]
             else:
                 explanations = [f"IPC {s['section']}: {s.get('title', 'Criminal Statute')}" for s in ipc_sections]
             
@@ -229,14 +266,17 @@ async def analyze_evidence(file: UploadFile = File(...), context: str = Form("ev
                 
             factors.extend([
                 "Document format Analysis: FIR Standard Layout Structure",
-                f"Extracted Statutes via Engine: {', '.join(detected_ipc_keys)}",
+                f"Extracted Statutes via Engine: {', '.join(detected_ipc_keys) if detected_ipc_keys else 'None detected'}",
             ])
             factors.extend(explanations)
             
             explanation_str = "FIR document successfully scanned via precision OCR. "
             if translated_text:
                 explanation_str += f"A regional dialect ({language}) was detected and seamlessly autonomously translated to English for statute mapping. "
-            explanation_str += f"The following criminal statutes were computationally isolated: {', '.join(detected_ipc_keys)}. See factors for detailed legal charges."
+            if detected_ipc_keys:
+                explanation_str += f"The following criminal statutes were computationally isolated: {', '.join(detected_ipc_keys)}. See factors for detailed legal charges."
+            else:
+                explanation_str += "No confident IPC section references were isolated from the OCR text. Please review OCR output manually or upload a clearer FIR scan."
             
             return AnalysisResponse(
                 status="success",
@@ -245,7 +285,8 @@ async def analyze_evidence(file: UploadFile = File(...), context: str = Form("ev
                 is_manipulated=False,
                 explanation=explanation_str,
                 key_factors=factors,
-                detected_ipcs=detected_ipc_keys
+                detected_ipcs=detected_ipc_keys,
+                image_url=saved_fir_image_url,
             )
             
         except Exception as e:
@@ -259,51 +300,22 @@ async def analyze_evidence(file: UploadFile = File(...), context: str = Form("ev
                 is_manipulated=False,
                 explanation=f"Document Analysis Failed: Could not process the uploaded file securely ({str(e)}). Please ensure you are uploading a clear Image (PNG/JPG) of a valid First Information Report.",
                 key_factors=["Unsupported or corrupted file format"],
-                detected_ipcs=[]
+                detected_ipcs=[],
+                image_url=saved_fir_image_url,
             )
 
         
-    # If it's not FIR, it's Evidence
-    if "video" in file_type:
-        return AnalysisResponse(
-            status="success",
-            evidence_type="video",
-            confidence_score=92.5,
-            is_manipulated=True,
-            explanation="Detected asynchronous lip movements and inconsistent facial lighting patterns indicative of a deepfake.",
-            key_factors=["Lighting inconsistency at 0:12", "Lip-sync mismatch", "Unnatural eye blinking rate"]
-        )
-    elif "audio" in file_type:
-        return AnalysisResponse(
-            status="success",
-            evidence_type="audio",
-            confidence_score=88.0,
-            is_manipulated=False,
-            explanation="Audio frequency analysis shows natural harmonic progression. No signs of splicing or AI synthesis.",
-            key_factors=["Consistent background noise floor", "Natural breath patterns"]
-        )
-    elif "image" in file_type or file.filename.lower().endswith(('.jpg', '.jpeg', '.png')):
-        # Regular Image Evidence analysis
-        status_manipulated = random.choice([True, False])
-        return AnalysisResponse(
-            status="success",
-            evidence_type="Image Evidence",
-            confidence_score=random.uniform(70.0, 99.9),
-            is_manipulated=status_manipulated,
-            explanation="Image metadata and structural analysis completed." if not status_manipulated else "Anomalies detected in Error Level Analysis (ELA) or metadata.",
-            key_factors=["Metadata consistency check", "ELA consistency analysis"]
-        )
-    else:
-        # Default behavior
-        status_manipulated = random.choice([True, False])
-        return AnalysisResponse(
-            status="success",
-            evidence_type=file_type,
-            confidence_score=random.uniform(70.0, 99.9),
-            is_manipulated=status_manipulated,
-            explanation="Contextual and metadata analysis completed." if not status_manipulated else "Anomalies detected in metadata or contextual structure.",
-            key_factors=["Metadata consistency check", "Contextual embedding analysis"]
-        )
+    contents = await file.read()
+    saved_evidence_image_url = _save_uploaded_image(contents, file.filename or "evidence_image", file_type, "evidence")
+    evidence_result = await asyncio.to_thread(
+        analyze_uploaded_evidence,
+        contents,
+        file.filename or "",
+        file_type,
+    )
+    if saved_evidence_image_url:
+        evidence_result["image_url"] = saved_evidence_image_url
+    return AnalysisResponse(**evidence_result)
 
 if __name__ == "__main__":
     import uvicorn

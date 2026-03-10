@@ -5,3 +5,6 @@ python-multipart
 ultralytics
 easyocr
 opencv-python
+transformers
+langdetect
+deep-translator

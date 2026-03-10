@@ -90,6 +90,9 @@ async def extract_fir_text(
         
         # Clean the extracted text
         cleaned_text = clean_extracted_text(raw_text)
+
+        # Detect language before optional translation
+        language = detect_language(cleaned_text)
         
         # Translate if not English
         translated_text = None
