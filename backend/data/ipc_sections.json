@@ -1,0 +1,802 @@
+{
+  "sections": {
+    "120B": {
+      "title": "Criminal Conspiracy",
+      "description": "Punishment of criminal conspiracy",
+      "punishment": "Same punishment as if the offense was committed",
+      "category": "Conspiracy"
+    },
+    "124A": {
+      "title": "Sedition",
+      "description": "Whoever brings or attempts to bring into hatred or contempt the Government",
+      "punishment": "Imprisonment for life or imprisonment up to 3 years with fine",
+      "category": "Against State"
+    },
+    "144": {
+      "title": "Unlawful Assembly",
+      "description": "Joining unlawful assembly armed with deadly weapon",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Public Tranquility"
+    },
+    "147": {
+      "title": "Rioting",
+      "description": "Punishment for rioting",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Public Tranquility"
+    },
+    "148": {
+      "title": "Rioting with Deadly Weapon",
+      "description": "Rioting armed with deadly weapon",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Public Tranquility"
+    },
+    "153A": {
+      "title": "Promoting Enmity",
+      "description": "Promoting enmity between different groups on grounds of religion, race, etc.",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Public Tranquility"
+    },
+    "171": {
+      "title": "Wearing Garb of Public Servant",
+      "description": "Wearing garb or carrying token used by public servant with fraudulent intent",
+      "punishment": "Imprisonment up to 3 months, or fine up to Rs. 200, or both",
+      "category": "Against Public Servants"
+    },
+    "186": {
+      "title": "Obstructing Public Servant",
+      "description": "Obstructing public servant in discharge of public functions",
+      "punishment": "Imprisonment up to 3 months, or fine up to Rs. 500, or both",
+      "category": "Against Public Servants"
+    },
+    "191": {
+      "title": "Giving False Evidence",
+      "description": "Giving false evidence",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Justice"
+    },
+    "193": {
+      "title": "False Evidence in Judicial Proceeding",
+      "description": "Punishment for false evidence",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Justice"
+    },
+    "195A": {
+      "title": "Threatening to Give False Evidence",
+      "description": "Threatening any person to give false evidence",
+      "punishment": "Imprisonment up to 7 years, or fine, or both",
+      "category": "Against Justice"
+    },
+    "201": {
+      "title": "Causing Disappearance of Evidence",
+      "description": "Causing disappearance of evidence or giving false information",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Justice"
+    },
+    "211": {
+      "title": "False Charge of Offense",
+      "description": "False charge of offense made with intent to injure",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Justice"
+    },
+    "212": {
+      "title": "Harboring Offender",
+      "description": "Harboring offender who has escaped from custody",
+      "punishment": "Imprisonment varies based on offense harbored",
+      "category": "Against Justice"
+    },
+    "228": {
+      "title": "Intentional Insult to Court",
+      "description": "Intentional insult or interruption to public servant sitting in judicial proceeding",
+      "punishment": "Imprisonment up to 6 months, or fine up to Rs. 1000, or both",
+      "category": "Contempt"
+    },
+    "268": {
+      "title": "Public Nuisance",
+      "description": "Whoever is guilty of a public nuisance",
+      "punishment": "Fine up to Rs. 200",
+      "category": "Against Public Health"
+    },
+    "279": {
+      "title": "Rash Driving",
+      "description": "Rash driving or riding on a public way",
+      "punishment": "Imprisonment up to 6 months, or fine up to Rs. 1000, or both",
+      "category": "Against Public Safety"
+    },
+    "292": {
+      "title": "Obscene Material",
+      "description": "Sale of obscene books, etc.",
+      "punishment": "First conviction: Imprisonment up to 2 years and fine up to Rs. 2000",
+      "category": "Against Morality"
+    },
+    "294": {
+      "title": "Obscene Acts",
+      "description": "Obscene acts and songs",
+      "punishment": "Imprisonment up to 3 months, or fine, or both",
+      "category": "Against Morality"
+    },
+    "295": {
+      "title": "Injuring Place of Worship",
+      "description": "Injuring or defiling place of worship with intent to insult religion",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Religion"
+    },
+    "295A": {
+      "title": "Outraging Religious Feelings",
+      "description": "Deliberate acts to outrage religious feelings of any class",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Religion"
+    },
+    "299": {
+      "title": "Culpable Homicide",
+      "description": "Culpable homicide not amounting to murder",
+      "punishment": "Imprisonment for life or up to 10 years and fine",
+      "category": "Against Person"
+    },
+    "300": {
+      "title": "Murder",
+      "description": "Definition of murder",
+      "punishment": "See Section 302",
+      "category": "Against Person"
+    },
+    "302": {
+      "title": "Murder",
+      "description": "Punishment for murder",
+      "punishment": "Death or imprisonment for life and fine",
+      "category": "Against Person"
+    },
+    "303": {
+      "title": "Murder by Life Convict",
+      "description": "Punishment for murder by life-convict",
+      "punishment": "Death (declared unconstitutional, now life imprisonment)",
+      "category": "Against Person"
+    },
+    "304": {
+      "title": "Culpable Homicide Not Murder",
+      "description": "Punishment for culpable homicide not amounting to murder",
+      "punishment": "Imprisonment for life or up to 10 years and fine",
+      "category": "Against Person"
+    },
+    "304A": {
+      "title": "Death by Negligence",
+      "description": "Causing death by negligence",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "304B": {
+      "title": "Dowry Death",
+      "description": "Dowry death",
+      "punishment": "Imprisonment not less than 7 years but may extend to life",
+      "category": "Against Women"
+    },
+    "306": {
+      "title": "Abetment of Suicide",
+      "description": "Abetment of suicide",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Person"
+    },
+    "307": {
+      "title": "Attempt to Murder",
+      "description": "Attempt to murder",
+      "punishment": "Imprisonment up to 10 years and fine; if hurt caused, life imprisonment",
+      "category": "Against Person"
+    },
+    "308": {
+      "title": "Attempt to Culpable Homicide",
+      "description": "Attempt to commit culpable homicide",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "312": {
+      "title": "Causing Miscarriage",
+      "description": "Causing miscarriage",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "315": {
+      "title": "Preventing Child from Being Born Alive",
+      "description": "Act done with intent to prevent child being born alive",
+      "punishment": "Imprisonment up to 10 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "317": {
+      "title": "Exposure of Child",
+      "description": "Exposure and abandonment of child under 12 years",
+      "punishment": "Imprisonment up to 7 years, or fine, or both",
+      "category": "Against Children"
+    },
+    "319": {
+      "title": "Hurt",
+      "description": "Definition of hurt",
+      "punishment": "See Section 323",
+      "category": "Against Person"
+    },
+    "320": {
+      "title": "Grievous Hurt",
+      "description": "Definition of grievous hurt",
+      "punishment": "See Section 325",
+      "category": "Against Person"
+    },
+    "323": {
+      "title": "Voluntarily Causing Hurt",
+      "description": "Punishment for voluntarily causing hurt",
+      "punishment": "Imprisonment up to 1 year, or fine up to Rs. 1000, or both",
+      "category": "Against Person"
+    },
+    "324": {
+      "title": "Hurt with Dangerous Weapon",
+      "description": "Voluntarily causing hurt by dangerous weapons or means",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "325": {
+      "title": "Grievous Hurt",
+      "description": "Punishment for voluntarily causing grievous hurt",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Person"
+    },
+    "326": {
+      "title": "Grievous Hurt with Weapon",
+      "description": "Voluntarily causing grievous hurt by dangerous weapons",
+      "punishment": "Imprisonment for life or up to 10 years and fine",
+      "category": "Against Person"
+    },
+    "326A": {
+      "title": "Acid Attack",
+      "description": "Voluntarily causing grievous hurt by acid",
+      "punishment": "Imprisonment not less than 10 years, may extend to life, and fine",
+      "category": "Against Person"
+    },
+    "326B": {
+      "title": "Throwing Acid",
+      "description": "Voluntarily throwing or attempting to throw acid",
+      "punishment": "Imprisonment not less than 5 years, may extend to 7 years, and fine",
+      "category": "Against Person"
+    },
+    "341": {
+      "title": "Wrongful Restraint",
+      "description": "Punishment for wrongful restraint",
+      "punishment": "Imprisonment up to 1 month, or fine up to Rs. 500, or both",
+      "category": "Against Person"
+    },
+    "342": {
+      "title": "Wrongful Confinement",
+      "description": "Punishment for wrongful confinement",
+      "punishment": "Imprisonment up to 1 year, or fine up to Rs. 1000, or both",
+      "category": "Against Person"
+    },
+    "354": {
+      "title": "Assault on Woman",
+      "description": "Assault or criminal force to woman with intent to outrage her modesty",
+      "punishment": "Imprisonment not less than 1 year, may extend to 5 years, and fine",
+      "category": "Against Women"
+    },
+    "354A": {
+      "title": "Sexual Harassment",
+      "description": "Sexual harassment and punishment for sexual harassment",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Women"
+    },
+    "354B": {
+      "title": "Assault with Intent to Disrobe",
+      "description": "Assault or use of criminal force to woman with intent to disrobe",
+      "punishment": "Imprisonment not less than 3 years, may extend to 7 years, and fine",
+      "category": "Against Women"
+    },
+    "354C": {
+      "title": "Voyeurism",
+      "description": "Voyeurism",
+      "punishment": "First conviction: Imprisonment not less than 1 year, up to 3 years, and fine",
+      "category": "Against Women"
+    },
+    "354D": {
+      "title": "Stalking",
+      "description": "Stalking",
+      "punishment": "First conviction: Imprisonment up to 3 years and fine",
+      "category": "Against Women"
+    },
+    "359": {
+      "title": "Kidnapping",
+      "description": "Kidnapping from India and from lawful guardianship",
+      "punishment": "See Sections 363-369",
+      "category": "Against Person"
+    },
+    "362": {
+      "title": "Abduction",
+      "description": "Definition of abduction",
+      "punishment": "See Sections 364-366",
+      "category": "Against Person"
+    },
+    "363": {
+      "title": "Kidnapping",
+      "description": "Punishment for kidnapping",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Person"
+    },
+    "363A": {
+      "title": "Kidnapping for Begging",
+      "description": "Kidnapping or maiming a minor for purposes of begging",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Children"
+    },
+    "364": {
+      "title": "Kidnapping for Murder",
+      "description": "Kidnapping or abducting in order to murder",
+      "punishment": "Imprisonment for life or rigorous imprisonment up to 10 years and fine",
+      "category": "Against Person"
+    },
+    "364A": {
+      "title": "Kidnapping for Ransom",
+      "description": "Kidnapping for ransom",
+      "punishment": "Death or imprisonment for life and fine",
+      "category": "Against Person"
+    },
+    "365": {
+      "title": "Kidnapping to Wrongfully Confine",
+      "description": "Kidnapping or abducting with intent secretly to confine",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Person"
+    },
+    "366": {
+      "title": "Kidnapping Woman",
+      "description": "Kidnapping, abducting or inducing woman to compel her marriage",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Women"
+    },
+    "366A": {
+      "title": "Procuration of Minor Girl",
+      "description": "Procuration of minor girl",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Children"
+    },
+    "366B": {
+      "title": "Importation of Girl",
+      "description": "Importation of girl from foreign country",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Women"
+    },
+    "370": {
+      "title": "Human Trafficking",
+      "description": "Trafficking of person",
+      "punishment": "Rigorous imprisonment not less than 7 years, may extend to 10 years, and fine",
+      "category": "Against Person"
+    },
+    "372": {
+      "title": "Selling Minor for Prostitution",
+      "description": "Selling minor for purposes of prostitution",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Children"
+    },
+    "375": {
+      "title": "Rape",
+      "description": "Definition of rape",
+      "punishment": "See Section 376",
+      "category": "Against Women"
+    },
+    "376": {
+      "title": "Rape",
+      "description": "Punishment for rape",
+      "punishment": "Rigorous imprisonment not less than 10 years, may extend to life, and fine",
+      "category": "Against Women"
+    },
+    "376A": {
+      "title": "Causing Death or Vegetative State",
+      "description": "Punishment for causing death or resulting in persistent vegetative state of victim",
+      "punishment": "Rigorous imprisonment not less than 20 years, may extend to life or death",
+      "category": "Against Women"
+    },
+    "376AB": {
+      "title": "Rape of Woman Under 12",
+      "description": "Punishment for rape on woman under twelve years of age",
+      "punishment": "Rigorous imprisonment not less than 20 years, may extend to life or death",
+      "category": "Against Children"
+    },
+    "376B": {
+      "title": "Sexual Intercourse by Husband",
+      "description": "Sexual intercourse by husband upon his wife during separation",
+      "punishment": "Imprisonment up to 2 years and fine",
+      "category": "Against Women"
+    },
+    "376C": {
+      "title": "Sexual Intercourse by Person in Authority",
+      "description": "Sexual intercourse by person in authority",
+      "punishment": "Rigorous imprisonment not less than 5 years, may extend to 10 years, and fine",
+      "category": "Against Women"
+    },
+    "376D": {
+      "title": "Gang Rape",
+      "description": "Gang rape",
+      "punishment": "Rigorous imprisonment not less than 20 years, may extend to life, and fine",
+      "category": "Against Women"
+    },
+    "376DA": {
+      "title": "Gang Rape of Woman Under 16",
+      "description": "Punishment for gang rape on woman under sixteen years of age",
+      "punishment": "Imprisonment for life and fine",
+      "category": "Against Children"
+    },
+    "376DB": {
+      "title": "Gang Rape of Woman Under 12",
+      "description": "Punishment for gang rape on woman under twelve years of age",
+      "punishment": "Imprisonment for life or death",
+      "category": "Against Children"
+    },
+    "376E": {
+      "title": "Repeat Rape Offender",
+      "description": "Punishment for repeat offenders",
+      "punishment": "Imprisonment for life or death",
+      "category": "Against Women"
+    },
+    "377": {
+      "title": "Unnatural Offenses",
+      "description": "Unnatural offenses",
+      "punishment": "Imprisonment for life or up to 10 years and fine (partially struck down)",
+      "category": "Against Person"
+    },
+    "378": {
+      "title": "Theft",
+      "description": "Definition of theft",
+      "punishment": "See Section 379",
+      "category": "Against Property"
+    },
+    "379": {
+      "title": "Theft",
+      "description": "Punishment for theft",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "380": {
+      "title": "Theft in Dwelling House",
+      "description": "Theft in dwelling house, etc.",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "381": {
+      "title": "Theft by Clerk or Servant",
+      "description": "Theft by clerk or servant of property in possession of master",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "382": {
+      "title": "Theft After Preparation",
+      "description": "Theft after preparation made for causing death, hurt or restraint",
+      "punishment": "Rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "383": {
+      "title": "Extortion",
+      "description": "Definition of extortion",
+      "punishment": "See Section 384",
+      "category": "Against Property"
+    },
+    "384": {
+      "title": "Extortion",
+      "description": "Punishment for extortion",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "385": {
+      "title": "Putting in Fear of Injury",
+      "description": "Putting person in fear of injury in order to commit extortion",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "386": {
+      "title": "Extortion with Fear of Death",
+      "description": "Extortion by putting a person in fear of death or grievous hurt",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "390": {
+      "title": "Robbery",
+      "description": "Definition of robbery",
+      "punishment": "See Section 392",
+      "category": "Against Property"
+    },
+    "392": {
+      "title": "Robbery",
+      "description": "Punishment for robbery",
+      "punishment": "Rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "393": {
+      "title": "Attempt to Commit Robbery",
+      "description": "Attempt to commit robbery",
+      "punishment": "Rigorous imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "394": {
+      "title": "Robbery with Hurt",
+      "description": "Voluntarily causing hurt in committing robbery",
+      "punishment": "Imprisonment for life or rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "395": {
+      "title": "Dacoity",
+      "description": "Punishment for dacoity",
+      "punishment": "Imprisonment for life or rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "396": {
+      "title": "Dacoity with Murder",
+      "description": "Dacoity with murder",
+      "punishment": "Death or imprisonment for life and fine",
+      "category": "Against Property"
+    },
+    "397": {
+      "title": "Robbery/Dacoity with Deadly Weapon",
+      "description": "Robbery or dacoity with attempt to cause death or grievous hurt",
+      "punishment": "Rigorous imprisonment not less than 7 years",
+      "category": "Against Property"
+    },
+    "398": {
+      "title": "Attempt to Commit Robbery/Dacoity with Weapon",
+      "description": "Attempt to commit robbery or dacoity when armed with deadly weapon",
+      "punishment": "Rigorous imprisonment not less than 7 years",
+      "category": "Against Property"
+    },
+    "399": {
+      "title": "Making Preparation for Dacoity",
+      "description": "Making preparation to commit dacoity",
+      "punishment": "Rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "400": {
+      "title": "Belonging to Gang of Dacoits",
+      "description": "Punishment for belonging to gang of dacoits",
+      "punishment": "Imprisonment for life, or rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "406": {
+      "title": "Criminal Breach of Trust",
+      "description": "Punishment for criminal breach of trust",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "407": {
+      "title": "Criminal Breach of Trust by Carrier",
+      "description": "Criminal breach of trust by carrier, wharfinger or warehouse-keeper",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "408": {
+      "title": "Criminal Breach of Trust by Clerk or Servant",
+      "description": "Criminal breach of trust by clerk or servant",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "409": {
+      "title": "Criminal Breach of Trust by Public Servant",
+      "description": "Criminal breach of trust by public servant, or by banker, merchant or agent",
+      "punishment": "Imprisonment for life, or imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "411": {
+      "title": "Receiving Stolen Property",
+      "description": "Dishonestly receiving stolen property",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "415": {
+      "title": "Cheating",
+      "description": "Definition of cheating",
+      "punishment": "See Section 417",
+      "category": "Against Property"
+    },
+    "417": {
+      "title": "Cheating",
+      "description": "Punishment for cheating",
+      "punishment": "Imprisonment up to 1 year, or fine, or both",
+      "category": "Against Property"
+    },
+    "418": {
+      "title": "Cheating with Knowledge",
+      "description": "Cheating with knowledge that wrongful loss may ensue to person whose interest offender is bound to protect",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "419": {
+      "title": "Cheating by Personation",
+      "description": "Punishment for cheating by personation",
+      "punishment": "Imprisonment up to 3 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "420": {
+      "title": "Cheating and Dishonestly Inducing",
+      "description": "Cheating and dishonestly inducing delivery of property",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "426": {
+      "title": "Mischief",
+      "description": "Punishment for mischief",
+      "punishment": "Imprisonment up to 3 months, or fine, or both",
+      "category": "Against Property"
+    },
+    "427": {
+      "title": "Mischief Causing Damage",
+      "description": "Mischief causing damage to the amount of fifty rupees",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "436": {
+      "title": "Mischief by Fire or Explosive",
+      "description": "Mischief by fire or explosive substance with intent to destroy house, etc.",
+      "punishment": "Imprisonment for life or imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "447": {
+      "title": "Criminal Trespass",
+      "description": "Punishment for criminal trespass",
+      "punishment": "Imprisonment up to 3 months, or fine up to Rs. 500, or both",
+      "category": "Against Property"
+    },
+    "448": {
+      "title": "House Trespass",
+      "description": "Punishment for house-trespass",
+      "punishment": "Imprisonment up to 1 year, or fine up to Rs. 1000, or both",
+      "category": "Against Property"
+    },
+    "449": {
+      "title": "House Trespass to Commit Offense",
+      "description": "House-trespass in order to commit offense punishable with death",
+      "punishment": "Imprisonment for life, or rigorous imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "450": {
+      "title": "House Trespass to Commit Offense with Imprisonment",
+      "description": "House-trespass in order to commit offence punishable with imprisonment for life",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "451": {
+      "title": "House Trespass to Commit Offense with Imprisonment",
+      "description": "House-trespass in order to commit offence punishable with imprisonment",
+      "punishment": "Imprisonment up to 2 years and fine",
+      "category": "Against Property"
+    },
+    "452": {
+      "title": "House Trespass After Preparation for Harm",
+      "description": "House-trespass after preparation for hurt, assault or wrongful restraint",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "453": {
+      "title": "Lurking House Trespass",
+      "description": "Punishment for lurking house-trespass or house-breaking",
+      "punishment": "Imprisonment up to 2 years and fine",
+      "category": "Against Property"
+    },
+    "454": {
+      "title": "Lurking House Trespass to Commit Offense",
+      "description": "Lurking house-trespass or house-breaking in order to commit offence punishable with imprisonment",
+      "punishment": "Imprisonment up to 3 years and fine",
+      "category": "Against Property"
+    },
+    "455": {
+      "title": "Lurking House Trespass with Preparation",
+      "description": "Lurking house-trespass or house-breaking after preparation for hurt",
+      "punishment": "Imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "456": {
+      "title": "Night House Trespass",
+      "description": "Punishment for lurking house-trespass or house-breaking by night",
+      "punishment": "Imprisonment up to 3 years and fine",
+      "category": "Against Property"
+    },
+    "457": {
+      "title": "Night House Trespass to Commit Offense",
+      "description": "Lurking house-trespass or house-breaking by night to commit offence punishable with imprisonment",
+      "punishment": "Imprisonment up to 5 years and fine",
+      "category": "Against Property"
+    },
+    "458": {
+      "title": "Night House Trespass with Preparation",
+      "description": "Lurking house-trespass or house-breaking by night after preparation for hurt",
+      "punishment": "Imprisonment up to 14 years and fine",
+      "category": "Against Property"
+    },
+    "463": {
+      "title": "Forgery",
+      "description": "Definition of forgery",
+      "punishment": "See Section 465",
+      "category": "Against Property"
+    },
+    "465": {
+      "title": "Forgery",
+      "description": "Punishment for forgery",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Property"
+    },
+    "467": {
+      "title": "Forgery of Valuable Security",
+      "description": "Forgery of valuable security, will, etc.",
+      "punishment": "Imprisonment for life or imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "468": {
+      "title": "Forgery for Purpose of Cheating",
+      "description": "Forgery for purpose of cheating",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Property"
+    },
+    "471": {
+      "title": "Using Forged Document",
+      "description": "Using as genuine a forged document",
+      "punishment": "Same as if forged the document",
+      "category": "Against Property"
+    },
+    "489A": {
+      "title": "Counterfeiting Currency Notes",
+      "description": "Counterfeiting currency-notes or bank-notes",
+      "punishment": "Imprisonment for life or imprisonment up to 10 years and fine",
+      "category": "Against Property"
+    },
+    "494": {
+      "title": "Bigamy",
+      "description": "Marrying again during lifetime of husband or wife",
+      "punishment": "Imprisonment up to 7 years and fine",
+      "category": "Against Marriage"
+    },
+    "498": {
+      "title": "Enticing Married Woman",
+      "description": "Enticing or taking away or detaining with criminal intent a married woman",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Marriage"
+    },
+    "498A": {
+      "title": "Cruelty by Husband",
+      "description": "Husband or relative of husband of a woman subjecting her to cruelty",
+      "punishment": "Imprisonment up to 3 years and fine",
+      "category": "Against Women"
+    },
+    "499": {
+      "title": "Defamation",
+      "description": "Definition of defamation",
+      "punishment": "See Section 500",
+      "category": "Against Person"
+    },
+    "500": {
+      "title": "Defamation",
+      "description": "Punishment for defamation",
+      "punishment": "Simple imprisonment up to 2 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "503": {
+      "title": "Criminal Intimidation",
+      "description": "Criminal intimidation",
+      "punishment": "See Section 506",
+      "category": "Against Person"
+    },
+    "504": {
+      "title": "Intentional Insult to Provoke Breach of Peace",
+      "description": "Intentional insult with intent to provoke breach of the peace",
+      "punishment": "Imprisonment up to 2 years, or fine, or both",
+      "category": "Against Person"
+    },
+    "506": {
+      "title": "Criminal Intimidation",
+      "description": "Punishment for criminal intimidation",
+      "punishment": "Imprisonment up to 2 years, or fine, or both; if threat to cause death or grievous hurt, up to 7 years",
+      "category": "Against Person"
+    },
+    "507": {
+      "title": "Criminal Intimidation by Anonymous Communication",
+      "description": "Criminal intimidation by an anonymous communication",
+      "punishment": "Imprisonment up to 2 years in addition to punishment under Section 506",
+      "category": "Against Person"
+    },
+    "509": {
+      "title": "Word/Gesture to Insult Modesty of Woman",
+      "description": "Word, gesture or act intended to insult the modesty of a woman",
+      "punishment": "Simple imprisonment up to 3 years and fine",
+      "category": "Against Women"
+    },
+    "511": {
+      "title": "Attempt to Commit Offense",
+      "description": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment",
+      "punishment": "Up to half the longest term provided for the offence",
+      "category": "General"
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "description": "Sample FIR templates for testing Nyaya AI platform",
+    "purpose": "Testing IPC extraction and FIR analysis capabilities",
+    "version": "1.0"
+  },
+  "sample_firs": [
+    {
+      "id": "FIR-001",
+      "fir_number": "0123/2024",
+      "police_station": "Kotwali Police Station, Lucknow",
+      "district": "Lucknow",
+      "state": "Uttar Pradesh",
+      "date_of_occurrence": "2024-01-15",
+      "date_of_registration": "2024-01-15",
+      "ipc_sections": ["302", "201", "34"],
+      "description": "First Information Report\n\nI, Ramesh Kumar S/o Shri Mohan Lal, R/o 45, Hazratganj, Lucknow, hereby lodge this complaint.\n\nOn 15th January 2024, at approximately 10:30 PM, my brother Suresh Kumar was found murdered at his residence at 78, Aminabad, Lucknow. When I reached his house, I found him lying in a pool of blood with multiple stab wounds on his body.\n\nI suspect his business partner Vinod Sharma and two unknown persons committed this heinous crime under Section 302 IPC (Murder). They have also tried to destroy evidence under Section 201 IPC. As multiple persons were involved, Section 34 IPC (Common Intention) is also applicable.\n\nI request the police to take immediate action and arrest the accused.\n\nSD/-\nRamesh Kumar\nComplainant",
+      "complainant": "Ramesh Kumar",
+      "accused": ["Vinod Sharma", "Unknown Person 1", "Unknown Person 2"],
+      "category": "murder"
+    },
+    {
+      "id": "FIR-002",
+      "fir_number": "0456/2024",
+      "police_station": "Cyber Crime Cell, Mumbai",
+      "district": "Mumbai",
+      "state": "Maharashtra",
+      "date_of_occurrence": "2024-02-20",
+      "date_of_registration": "2024-02-21",
+      "ipc_sections": ["420", "468", "471", "120B"],
+      "description": "First Information Report\n\nI, Priya Sharma D/o Shri Rakesh Sharma, working as Manager at ABC Bank, Mumbai, lodge this complaint.\n\nOn 20th February 2024, we detected a fraudulent transaction of Rs. 50,00,000 (Fifty Lakhs) from our customer's account. Upon investigation, we found that the accused obtained the customer's credentials through phishing and forged authorization documents.\n\nThe offences committed include:\n- Section 420 IPC - Cheating and dishonestly inducing delivery of property\n- Section 468 IPC - Forgery for purpose of cheating\n- Section 471 IPC - Using forged documents as genuine\n- Section 120B IPC - Criminal Conspiracy\n\nThe money was transferred to multiple accounts. We have CCTV footage showing suspicious individuals at our ATM.\n\nSD/-\nPriya Sharma\nComplainant",
+      "complainant": "Priya Sharma",
+      "accused": ["Unknown Cyber Criminals"],
+      "category": "financial_fraud"
+    },
+    {
+      "id": "FIR-003",
+      "fir_number": "0789/2024",
+      "police_station": "Mahila Thana, Jaipur",
+      "district": "Jaipur",
+      "state": "Rajasthan",
+      "date_of_occurrence": "2024-03-10",
+      "date_of_registration": "2024-03-10",
+      "ipc_sections": ["498A", "323", "504", "506"],
+      "description": "प्रथम सूचना रिपोर्ट (FIR)\n\nमें, सीमा देवी पत्नी श्री राजेश सिंह, निवासी 234, मालवीय नगर, जयपुर यह शिकायत दर्ज कराती हूं।\n\nमेरे पति राजेश सिंह और सास-ससुर मुझे विगत 2 वर्षों से दहेज की मांग को लेकर प्रताड़ित कर रहे हैं। धारा 498A आईपीसी के तहत पति एवं ससुराल वालों द्वारा क्रूरता का मामला दर्ज किया जाए।\n\nइसके अतिरिक्त:\n- धारा 323 IPC - स्वेच्छापूर्वक चोट पहुंचाना\n- धारा 504 IPC - शांति भंग करने के इरादे से अपमान करना\n- धारा 506 IPC - आपराधिक धमकी\n\nमुझे शारीरिक और मानसिक रूप से प्रताड़ित किया जा रहा है। कृपया आवश्यक कार्रवाई करें।\n\nहस्ताक्षर/-\nसीमा देवी\nशिकायतकर्ता",
+      "complainant": "Seema Devi",
+      "accused": ["Rajesh Singh", "In-laws"],
+      "category": "domestic_violence"
+    },
+    {
+      "id": "FIR-004",
+      "fir_number": "1012/2024",
+      "police_station": "Salt Lake Police Station, Kolkata",
+      "district": "Kolkata",
+      "state": "West Bengal",
+      "date_of_occurrence": "2024-04-05",
+      "date_of_registration": "2024-04-05",
+      "ipc_sections": ["376", "354", "506"],
+      "description": "First Information Report\n\n[Confidential - Section 376 IPC Case]\n\nThe complainant (name withheld as per law) aged 24 years, R/o Salt Lake, Kolkata, reports:\n\nOn 5th April 2024, at approximately 9:00 PM, while returning from office, the complainant was assaulted by the accused near Block-AF, Salt Lake. The accused committed the offence under Section 376 IPC (Rape) after overpowering the victim.\n\nAdditionally applicable sections:\n- Section 354 IPC - Assault with intent to outrage modesty\n- Section 506 IPC - Criminal intimidation\n\nThe accused is identified as a colleague from the complainant's workplace. Medical examination has been conducted and evidence preserved.\n\nAction requested under The Criminal Law (Amendment) Act, 2013.\n\nSI Debashis Roy\nInvestigating Officer",
+      "complainant": "Name Withheld",
+      "accused": ["Workplace Colleague"],
+      "category": "sexual_assault"
+    },
+    {
+      "id": "FIR-005",
+      "fir_number": "1345/2024",
+      "police_station": "Andheri Police Station, Mumbai",
+      "district": "Mumbai",
+      "state": "Maharashtra",
+      "date_of_occurrence": "2024-05-12",
+      "date_of_registration": "2024-05-12",
+      "ipc_sections": ["392", "397", "34"],
+      "description": "First Information Report\n\nI, Amit Patel S/o Shri Jayesh Patel, owner of Patel Jewellers, Andheri West, Mumbai, report the following incident:\n\nOn 12th May 2024, at around 7:30 PM, shortly before closing time, four armed men entered my shop wearing masks. They threatened my staff with country-made pistols and assaulted my security guard causing grievous injuries.\n\nThe robbers took away:\n- Gold jewellery worth Rs. 1.5 Crore\n- Cash Rs. 8,00,000 from the vault\n- Diamond sets worth Rs. 75 Lakhs\n\nSections Applicable:\n- Section 392 IPC - Robbery\n- Section 397 IPC - Robbery with attempt to cause death or grievous hurt\n- Section 34 IPC - Acts done by several persons in furtherance of common intention\n\nCCTV footage is available. Request immediate investigation.\n\nSD/-\nAmit Patel\nComplainant",
+      "complainant": "Amit Patel",
+      "accused": ["Four Unknown Armed Men"],
+      "category": "robbery"
+    },
+    {
+      "id": "FIR-006",
+      "fir_number": "1678/2024",
+      "police_station": "Traffic Police Station, Delhi",
+      "district": "New Delhi",
+      "state": "Delhi",
+      "date_of_occurrence": "2024-06-18",
+      "date_of_registration": "2024-06-18",
+      "ipc_sections": ["304A", "279", "337", "338"],
+      "description": "First Information Report - Road Accident Case\n\nI, Constable Dinesh Kumar, Badge No. 2456, Traffic Police, New Delhi, report:\n\nOn 18th June 2024, at 11:45 PM, a fatal road accident occurred near India Gate Circle. A speeding car (DL-3C-AB-1234) driven by Akash Malhotra, in an inebriated condition, hit a family of four crossing the road.\n\nCasualties:\n- 1 deceased (Mrs. Sunita Verma, age 45)\n- 3 injured (admitted to AIIMS Trauma Centre)\n\nSections Applicable:\n- Section 304A IPC - Causing death by negligence\n- Section 279 IPC - Rash driving on public way\n- Section 337 IPC - Causing hurt by act endangering life\n- Section 338 IPC - Causing grievous hurt by act endangering life\n\nThe accused has been arrested. Blood alcohol level found above permissible limit.\n\nSD/-\nConstable Dinesh Kumar\nReporting Officer",
+      "complainant": "Traffic Police",
+      "accused": ["Akash Malhotra"],
+      "category": "road_accident"
+    },
+    {
+      "id": "FIR-007",
+      "fir_number": "1901/2024",
+      "police_station": "Hauz Khas Police Station, Delhi",
+      "district": "South Delhi",
+      "state": "Delhi",
+      "date_of_occurrence": "2024-07-22",
+      "date_of_registration": "2024-07-23",
+      "ipc_sections": ["363", "365", "387"],
+      "description": "First Information Report - Missing Person / Kidnapping\n\nI, Dr. Arun Kapoor S/o Late Shri B.K. Kapoor, R/o E-234, Hauz Khas, New Delhi, report:\n\nMy son Rohan Kapoor, age 8 years, went missing on 22nd July 2024 from outside our residence at approximately 5:00 PM while playing with other children.\n\nOn 23rd July 2024, we received a ransom call demanding Rs. 50 Lakhs for his safe return. The caller warned against informing police.\n\nSections Applicable:\n- Section 363 IPC - Kidnapping\n- Section 365 IPC - Kidnapping with intent to secretly and wrongfully confine person\n- Section 387 IPC - Putting person in fear of death or grievous hurt to commit extortion\n\nChild Description: Fair complexion, 4 feet height, wearing blue jeans and white t-shirt with 'NIKE' logo.\n\nImmediate action requested.\n\nSD/-\nDr. Arun Kapoor\nComplainant (Father)",
+      "complainant": "Dr. Arun Kapoor",
+      "accused": ["Unknown Kidnappers"],
+      "category": "kidnapping"
+    },
+    {
+      "id": "FIR-008",
+      "fir_number": "2234/2024",
+      "police_station": "Civil Lines Police Station, Allahabad",
+      "district": "Prayagraj",
+      "state": "Uttar Pradesh",
+      "date_of_occurrence": "2024-08-30",
+      "date_of_registration": "2024-08-30",
+      "ipc_sections": ["147", "148", "149", "307", "323", "427"],
+      "description": "First Information Report - Rioting Case\n\nI, Sub-Inspector Vijay Tripathi, Civil Lines PS, Prayagraj, report the following incident:\n\nOn 30th August 2024, a violent clash erupted between two groups at Civil Lines area following a dispute over a property matter. Approximately 50-60 persons were involved from both sides.\n\nIncident Details:\n- Mob armed with lathis, rods, and sharp weapons\n- 8 persons seriously injured\n- 2 in critical condition at hospital\n- Public property damaged including 3 vehicles and shop fronts\n\nApplicable IPC Sections:\n- U/s 147 - Rioting\n- U/s 148 - Rioting, armed with deadly weapon\n- U/s 149 - Every member of unlawful assembly guilty of offence committed\n- U/s 307 - Attempt to murder (for 2 critical victims)\n- U/s 323 - Voluntarily causing hurt\n- U/s 427 - Mischief causing damage to property\n\n12 persons have been detained.\n\nSD/-\nSI Vijay Tripathi",
+      "complainant": "Police Suo Moto",
+      "accused": ["12 Detained Persons", "Others Unknown"],
+      "category": "rioting"
+    },
+    {
+      "id": "FIR-009",
+      "fir_number": "2567/2024",
+      "police_station": "Cyber Crime Police Station, Hyderabad",
+      "district": "Hyderabad",
+      "state": "Telangana",
+      "date_of_occurrence": "2024-09-14",
+      "date_of_registration": "2024-09-15",
+      "ipc_sections": ["406", "409", "420", "467", "468"],
+      "description": "First Information Report - Corporate Fraud\n\nI, Mr. Venkat Rao, CEO, XYZ Technologies Pvt Ltd, HITEC City, Hyderabad, lodge this complaint:\n\nOur investigations revealed that Mr. Sudhir Reddy, CFO of our company, along with 2 other employees, have embezzled company funds totalling Rs. 8.5 Crores over a period of 18 months.\n\nModus Operandi:\n1. Created fake vendor invoices\n2. Forged board resolutions for fund transfers\n3. Diverted client payments to personal accounts\n4. Falsified audit documents\n\nApplicable Sections:\n- Section 406 IPC - Criminal breach of trust\n- Section 409 IPC - Criminal breach of trust by public servant or banker\n- Section 420 IPC - Cheating and dishonestly inducing delivery of property\n- Section 467 IPC - Forgery of valuable security\n- Section 468 IPC - Forgery for purpose of cheating\n\nAll documentary evidence attached.\n\nSD/-\nVenkat Rao\nCEO, XYZ Technologies",
+      "complainant": "Venkat Rao",
+      "accused": ["Sudhir Reddy (CFO)", "2 Unknown Employees"],
+      "category": "corporate_fraud"
+    },
+    {
+      "id": "FIR-010",
+      "fir_number": "2890/2024",
+      "police_station": "Koramangala Police Station, Bangalore",
+      "district": "Bangalore Urban",
+      "state": "Karnataka",
+      "date_of_occurrence": "2024-10-08",
+      "date_of_registration": "2024-10-08",
+      "ipc_sections": ["379", "411", "34"],
+      "description": "First Information Report - Vehicle Theft\n\nI, Arjun Menon S/o Shri C. Ramachandran, R/o 567, Koramangala 4th Block, Bangalore, report:\n\nOn 8th October 2024, my car (KA-05-MJ-9876, White Honda City, 2022 model) was stolen from the basement parking of Forum Mall, Koramangala between 6:00 PM and 9:00 PM.\n\nThe vehicle was locked and parked in designated parking space B-45. When I returned from the mall, the vehicle was missing.\n\nApplicable Sections:\n- Section 379 IPC - Theft\n- Section 411 IPC - Dishonestly receiving stolen property\n- Section 34 IPC - Common intention\n\nEstimated Value: Rs. 15,00,000\n\nVehicle Details:\n- Registration: KA-05-MJ-9876\n- Color: White\n- Chassis No: XXXXX12345\n- Engine No: XXXXX67890\n\nCCTV footage requested from mall authorities.\n\nSD/-\nArjun Menon\nComplainant",
+      "complainant": "Arjun Menon",
+      "accused": ["Unknown"],
+      "category": "vehicle_theft"
+    }
+  ],
+  "sample_fir_texts_for_ocr": [
+    {
+      "id": "OCR-001",
+      "text": "FIR No. 123/2024\nPolice Station: Sadar Bazar, Delhi\nDate: 15.01.2024\n\nComplainant reports that on 14.01.2024 at around 11 PM, accused Ravi Kumar committed theft at complainant's residence stealing gold ornaments worth Rs. 5 lakhs. Case registered u/s 380, 457, 458 IPC. Investigation initiated.",
+      "expected_sections": ["380", "457", "458"]
+    },
+    {
+      "id": "OCR-002", 
+      "text": "प्राथमिकी संख्या: 456/2024\nथाना: कोतवाली, वाराणसी\n\nआरोपी मोहन यादव ने दिनांक 20.02.2024 को शिकायतकर्ता की दुकान में आग लगा दी। धारा 435, 436 भादवि के तहत मुकदमा दर्ज। अनुमानित नुकसान 10 लाख रुपये।",
+      "expected_sections": ["435", "436"]
+    },
+    {
+      "id": "OCR-003",
+      "text": "Case registered under Sections 302/307/34 of IPC against accused persons for the murder of victim Shri Ram Prasad. The body was found with multiple gunshot wounds. Prima facie case of planned murder by 3 accused persons acting with common intention.",
+      "expected_sections": ["302", "307", "34"]
+    }
+  ]
+}

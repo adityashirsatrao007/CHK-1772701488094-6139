@@ -1,0 +1,329 @@
+{
+    "cases": [
+        {
+            "case_id": "IND-FIR-2019-0001",
+            "police_station": "Electronics Complex",
+            "date_filed": "2019-01-06",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 420", "IPC 406", "IPC 34"],
+                "charges_summary": "Cheating and dishonestly inducing delivery of property | Punishment for criminal breach of trust | Common intention",
+                "ocr_confidence": 97.33,
+                "image_url": "http://localhost:8000/static/firs/Electronics%20Complex%20PS01__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Image (Forged Document)",
+                "is_manipulated": false,
+                "confidence_score": 98.46,
+                "explanation": "Verified Fake Stamp: The embossing on the seized property documents does not match the official state registry watermarks.",
+                "image_url": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Cheating (IPC 420) cases reported in West Bengal (NCRB 2014)",
+                    "stat_value": "14,478",
+                    "national_total": "2,34,267",
+                    "source": "NCRB Crime in India Report 2014"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2020-0002",
+            "police_station": "Eco Park",
+            "date_filed": "2020-06-26",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 279", "IPC 338"],
+                "charges_summary": "Rash driving or riding on a public way | Causing grievous hurt by act endangering life or personal safety of others",
+                "ocr_confidence": 99.07,
+                "image_url": "http://localhost:8000/static/firs/ECO%20PARK%20PS01__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Image (Crime Scene)",
+                "is_manipulated": false,
+                "confidence_score": 98.91,
+                "explanation": "Scene Verification: Tire skid marks and vehicle debris scatter pattern is consistent with the reported high-speed impact.",
+                "image_url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Rash Driving (IPC 279) incidents in West Bengal (NCRB 2014)",
+                    "stat_value": "23,360",
+                    "national_total": "4,14,198",
+                    "source": "NCRB Crime in India Report 2014"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2021-0003",
+            "police_station": "Lake Town",
+            "date_filed": "2019-07-11",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 341", "IPC 323", "IPC 506"],
+                "charges_summary": "Punishment for wrongful restraint | Punishment for voluntarily causing hurt | Punishment for criminal intimidation",
+                "ocr_confidence": 96.36,
+                "image_url": "http://localhost:8000/static/firs/Lake%20Town%20PS01__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Video (CCTV)",
+                "is_manipulated": false,
+                "confidence_score": 95.38,
+                "explanation": "Footage Authenticated: Camera timestamps and metadata verified against standard NTP servers. No frame dropping detected.",
+                "image_url": "https://images.unsplash.com/photo-1558002038-1055907df827?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Assault / Hurt (IPC 323) cases in West Bengal (NCRB 2014)",
+                    "stat_value": "36,384",
+                    "national_total": "3,11,657",
+                    "source": "NCRB Crime in India Report 2014"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2020-0004",
+            "police_station": "Cyber-Crime PS",
+            "date_filed": "2020-05-15",
+            "status": "Under Investigation",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 420", "IT Act 66C", "IT Act 66D"],
+                "charges_summary": "Cyber fraud and identity theft | Online impersonation and cheating",
+                "ocr_confidence": 94.52,
+                "image_url": "http://localhost:8000/static/firs/Cyber-Crime%20PS40-20__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Digital Evidence",
+                "is_manipulated": false,
+                "confidence_score": 97.82,
+                "explanation": "Digital forensics verified: IP logs, transaction records, and email metadata trace back to accused's devices.",
+                "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Cyber Crimes reported in West Bengal (NCRB 2020)",
+                    "stat_value": "1,874",
+                    "national_total": "50,035",
+                    "source": "NCRB Crime in India Report 2020"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2017-0005",
+            "police_station": "Airport PS",
+            "date_filed": "2017-08-22",
+            "status": "Closed",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 379", "IPC 411"],
+                "charges_summary": "Theft | Receiving stolen property",
+                "ocr_confidence": 92.15,
+                "image_url": "http://localhost:8000/static/firs/Airport%20PSAIRPORT-0004-2017-2711__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "CCTV Footage",
+                "is_manipulated": false,
+                "confidence_score": 99.12,
+                "explanation": "Airport CCTV footage verified: Timestamps match flight records, suspect identified entering restricted area.",
+                "image_url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Theft (IPC 379) cases in West Bengal (NCRB 2017)",
+                    "stat_value": "28,459",
+                    "national_total": "2,48,156",
+                    "source": "NCRB Crime in India Report 2017"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2018-0006",
+            "police_station": "Baguiati",
+            "date_filed": "2018-03-14",
+            "status": "Under Investigation",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 302", "IPC 201"],
+                "charges_summary": "Murder | Causing disappearance of evidence of offence",
+                "ocr_confidence": 95.78,
+                "image_url": "http://localhost:8000/static/firs/Baguiati%20PS500-18__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Forensic Evidence",
+                "is_manipulated": false,
+                "confidence_score": 99.45,
+                "explanation": "DNA analysis complete: Blood samples match victim. Fingerprints recovered from crime scene.",
+                "image_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Murder (IPC 302) cases in West Bengal (NCRB 2018)",
+                    "stat_value": "3,245",
+                    "national_total": "29,017",
+                    "source": "NCRB Crime in India Report 2018"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2019-0007",
+            "police_station": "Baguiati",
+            "date_filed": "2019-09-21",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 354", "IPC 509"],
+                "charges_summary": "Assault or criminal force to woman with intent to outrage her modesty | Word, gesture or act intended to insult the modesty of a woman",
+                "ocr_confidence": 93.42,
+                "image_url": "http://localhost:8000/static/firs/Baguiati%20PS501-19__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Witness Testimony",
+                "is_manipulated": false,
+                "confidence_score": 91.33,
+                "explanation": "Multiple witness statements corroborated. CCTV footage from nearby establishment supports timeline.",
+                "image_url": "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Assault on Women (IPC 354) in West Bengal (NCRB 2019)",
+                    "stat_value": "12,567",
+                    "national_total": "86,001",
+                    "source": "NCRB Crime in India Report 2019"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2017-0008",
+            "police_station": "Bidhannagar North",
+            "date_filed": "2017-11-05",
+            "status": "Closed",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 468", "IPC 471"],
+                "charges_summary": "Forgery for purpose of cheating | Using as genuine a forged document",
+                "ocr_confidence": 96.89,
+                "image_url": "http://localhost:8000/static/firs/Bidhannagar%20North%20PSBDN-NORTH-0200-2017-4289__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Document Analysis",
+                "is_manipulated": true,
+                "confidence_score": 97.65,
+                "explanation": "Document forensics confirmed: Signature analysis shows inconsistencies. Paper fiber analysis indicates recent alteration.",
+                "image_url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Forgery (IPC 468) cases in West Bengal (NCRB 2017)",
+                    "stat_value": "2,134",
+                    "national_total": "14,567",
+                    "source": "NCRB Crime in India Report 2017"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2017-0009",
+            "police_station": "Bidhannagar South",
+            "date_filed": "2017-04-18",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 307", "IPC 326"],
+                "charges_summary": "Attempt to murder | Voluntarily causing grievous hurt by dangerous weapons or means",
+                "ocr_confidence": 94.56,
+                "image_url": "http://localhost:8000/static/firs/Bidhannagar%20South%20PSBDN-SOUTH-0100-2017-4941__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Medical Report",
+                "is_manipulated": false,
+                "confidence_score": 98.92,
+                "explanation": "Medical examination confirms grievous injuries consistent with sharp weapon attack. Victim's statement recorded.",
+                "image_url": "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Attempt to Murder (IPC 307) in West Bengal (NCRB 2017)",
+                    "stat_value": "4,892",
+                    "national_total": "31,231",
+                    "source": "NCRB Crime in India Report 2017"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2018-0010",
+            "police_station": "Women PS",
+            "date_filed": "2018-02-28",
+            "status": "Convicted",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 498A", "IPC 304B"],
+                "charges_summary": "Husband or relative of husband of a woman subjecting her to cruelty | Dowry death",
+                "ocr_confidence": 98.12,
+                "image_url": "http://localhost:8000/static/firs/Women%20PSWOMEN-0001-2018-1189__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Post-mortem Report",
+                "is_manipulated": false,
+                "confidence_score": 99.78,
+                "explanation": "Post-mortem confirms cause of death. Statements from family members and neighbors substantiate dowry harassment.",
+                "image_url": "https://images.unsplash.com/photo-1611267254323-4db7b39c732c?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Dowry Deaths (IPC 304B) in West Bengal (NCRB 2018)",
+                    "stat_value": "478",
+                    "national_total": "7,167",
+                    "source": "NCRB Crime in India Report 2018"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2017-0011",
+            "police_station": "NSCBI Airport",
+            "date_filed": "2017-06-12",
+            "status": "Closed",
+            "fir_summary": {
+                "detected_ipcs": ["NDPS Act 21", "NDPS Act 22"],
+                "charges_summary": "Possession of narcotic drugs | Manufacturing of narcotic drugs",
+                "ocr_confidence": 95.34,
+                "image_url": "http://localhost:8000/static/firs/NSCBI%20Airport%20PSNSCBI-AIRPORT-0001-2017-2488__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Chemical Analysis",
+                "is_manipulated": false,
+                "confidence_score": 99.89,
+                "explanation": "FSL report confirms seized substance is cocaine (2.5 kg). Passenger manifest and baggage tags verified.",
+                "image_url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "NDPS Cases in West Bengal (NCRB 2017)",
+                    "stat_value": "3,567",
+                    "national_total": "54,098",
+                    "source": "NCRB Crime in India Report 2017"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2020-0012",
+            "police_station": "Cyber-Crime PS",
+            "date_filed": "2020-08-03",
+            "status": "Under Investigation",
+            "fir_summary": {
+                "detected_ipcs": ["IT Act 66", "IPC 419", "IPC 420"],
+                "charges_summary": "Computer related offences | Cheating by personation | Cheating and dishonestly inducing delivery of property",
+                "ocr_confidence": 93.78,
+                "image_url": "http://localhost:8000/static/firs/Cyber-Crime%20PS41-20__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Digital Forensics",
+                "is_manipulated": false,
+                "confidence_score": 96.45,
+                "explanation": "Bank server logs analyzed. Phishing domain traced to accused. Transaction trail documented.",
+                "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Online Financial Fraud in West Bengal (NCRB 2020)",
+                    "stat_value": "892",
+                    "national_total": "10,395",
+                    "source": "NCRB Crime in India Report 2020"
+                }
+            }
+        },
+        {
+            "case_id": "IND-FIR-2020-0013",
+            "police_station": "Eco Park",
+            "date_filed": "2020-12-15",
+            "status": "Trial Pending",
+            "fir_summary": {
+                "detected_ipcs": ["IPC 304A", "IPC 337"],
+                "charges_summary": "Causing death by negligence | Causing hurt by act endangering life or personal safety of others",
+                "ocr_confidence": 97.89,
+                "image_url": "http://localhost:8000/static/firs/ECO%20PARK%20PS02__1.jpg"
+            },
+            "evidence_analysis": {
+                "evidence_type": "Accident Investigation",
+                "is_manipulated": false,
+                "confidence_score": 94.67,
+                "explanation": "Vehicle examination complete. Brake failure confirmed. Previous service records show negligent maintenance.",
+                "image_url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+                "ncrb_context": {
+                    "stat_label": "Death by Negligence (IPC 304A) in West Bengal (NCRB 2020)",
+                    "stat_value": "8,234",
+                    "national_total": "1,06,083",
+                    "source": "NCRB Crime in India Report 2020"
+                }
+            }
+        }
+    ]
+}

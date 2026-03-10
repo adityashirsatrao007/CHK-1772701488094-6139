@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "source": "National Crime Records Bureau (NCRB), India",
+    "dataset_url": "https://github.com/avinashladdha/CrimeDataset",
+    "years_covered": "2014-2016",
+    "last_updated": "2024",
+    "description": "Crime statistics under Indian Penal Code (IPC)"
+  },
+  "all_india_summary": {
+    "total_cognizable_ipc_crimes_2016": 2975711,
+    "crime_rate_per_lakh_2016": 233.6,
+    "year_wise_total": {
+      "2014": 2851563,
+      "2015": 2949400,
+      "2016": 2975711
+    }
+  },
+  "crime_categories": {
+    "offences_affecting_human_body": {
+      "total_2016": 897171,
+      "percentage_share": 30.1,
+      "crimes": [
+        {
+          "crime_head": "Murder",
+          "ipc_section": "302",
+          "incidence_2016": 30450,
+          "crime_rate_2016": 2.4,
+          "percentage_share": 1.0
+        },
+        {
+          "crime_head": "Culpable Homicide not Amounting to Murder",
+          "ipc_section": "304",
+          "incidence_2016": 3203,
+          "crime_rate_2016": 0.3,
+          "percentage_share": 0.1
+        },
+        {
+          "crime_head": "Causing Death by Negligence",
+          "ipc_section": "304A",
+          "incidence_2016": 140215,
+          "crime_rate_2016": 11.0,
+          "percentage_share": 4.7
+        },
+        {
+          "crime_head": "Dowry Deaths",
+          "ipc_section": "304B",
+          "incidence_2016": 7621,
+          "crime_rate_2016": 1.2,
+          "percentage_share": 0.3
+        },
+        {
+          "crime_head": "Attempt to Commit Murder",
+          "ipc_section": "307",
+          "incidence_2016": 49667,
+          "crime_rate_2016": 3.9,
+          "percentage_share": 1.7
+        },
+        {
+          "crime_head": "Attempt to Commit Culpable Homicide",
+          "ipc_section": "308",
+          "incidence_2016": 7527,
+          "crime_rate_2016": 0.6,
+          "percentage_share": 0.3
+        },
+        {
+          "crime_head": "Grievous Hurt",
+          "ipc_section": "325, 326",
+          "incidence_2016": 89039,
+          "crime_rate_2016": 7.0,
+          "percentage_share": 3.0
+        },
+        {
+          "crime_head": "Acid Attack",
+          "ipc_section": "326A, 326B",
+          "incidence_2016": 283,
+          "crime_rate_2016": 0.02,
+          "percentage_share": 0.01
+        },
+        {
+          "crime_head": "Causing Injuries by Rash Driving",
+          "ipc_section": "337, 338",
+          "incidence_2016": 348914,
+          "crime_rate_2016": 27.4,
+          "percentage_share": 11.7
+        },
+        {
+          "crime_head": "Assault on Women (Outraging Modesty)",
+          "ipc_section": "354",
+          "incidence_2016": 84746,
+          "crime_rate_2016": 13.8,
+          "incidence_breakdown": {
+            "assault_sec_354": 39953,
+            "sexual_harassment_sec_354A": 9789,
+            "disrobing_sec_354B": 932,
+            "voyeurism_sec_354C": 7236,
+            "stalking_sec_354D": 6969
+          },
+          "percentage_share": 2.8
+        },
+        {
+          "crime_head": "Kidnapping & Abduction",
+          "ipc_section": "363-369",
+          "incidence_2016": 88008,
+          "crime_rate_2016": 6.9,
+          "incidence_breakdown": {
+            "general_kidnapping_sec_363": 34727,
+            "kidnapping_for_murder_sec_364": 1216,
+            "kidnapping_for_ransom_sec_364A": 688,
+            "kidnapping_women_for_marriage_sec_366": 33796,
+            "other_kidnapping": 19467
+          },
+          "percentage_share": 3.0
+        },
+        {
+          "crime_head": "Human Trafficking",
+          "ipc_section": "370, 370A",
+          "incidence_2016": 918,
+          "crime_rate_2016": 0.1,
+          "percentage_share": 0.0
+        },
+        {
+          "crime_head": "Rape",
+          "ipc_section": "376",
+          "incidence_2016": 38947,
+          "crime_rate_2016": 6.3,
+          "incidence_breakdown": {
+            "rape_sec_376": 36881,
+            "gang_rape_sec_376D": 2171,
+            "custodial_rape": 16
+          },
+          "percentage_share": 1.3
+        },
+        {
+          "crime_head": "Attempt to Commit Rape",
+          "ipc_section": "376 r/w 511",
+          "incidence_2016": 5729,
+          "crime_rate_2016": 0.9,
+          "percentage_share": 0.2
+        },
+        {
+          "crime_head": "Unnatural Offences",
+          "ipc_section": "377",
+          "incidence_2016": 2187,
+          "crime_rate_2016": 0.2,
+          "percentage_share": 0.1
+        }
+      ]
+    },
+    "offences_against_state": {
+      "total_2016": 178,
+      "percentage_share": 0.0,
+      "crimes": [
+        {
+          "crime_head": "Sedition",
+          "ipc_section": "124A",
+          "incidence_2016": 35,
+          "crime_rate_2016": 0.0
+        },
+        {
+          "crime_head": "Waging War Against India",
+          "ipc_section": "121, 121A, 122, 123",
+          "incidence_2016": 143,
+          "crime_rate_2016": 0.0
+        }
+      ]
+    },
+    "offences_against_public_tranquility": {
+      "total_2016": 72829,
+      "percentage_share": 2.4,
+      "crimes": [
+        {
+          "crime_head": "Unlawful Assembly",
+          "ipc_section": "143, 144, 145",
+          "incidence_2016": 10377,
+          "crime_rate_2016": 0.8,
+          "percentage_share": 0.3
+        },
+        {
+          "crime_head": "Rioting",
+          "ipc_section": "147-151, 153A",
+          "incidence_2016": 61974,
+          "crime_rate_2016": 4.9,
+          "types": {
+            "agrarian": 4837,
+            "caste_conflict": 2909,
+            "political": 1987,
+            "communal": 1139,
+            "students": 580,
+            "sectarian": 442,
+            "industrial": 210,
+            "other": 59850
+          },
+          "percentage_share": 2.1
+        },
+        {
+          "crime_head": "Promoting Enmity Between Groups",
+          "ipc_section": "153A, 153B",
+          "incidence_2016": 478,
+          "crime_rate_2016": 0.0,
+          "percentage_share": 0.0
+        }
+      ]
+    },
+    "offences_against_property": {
+      "total_2016": 796032,
+      "percentage_share": 26.8,
+      "crimes": [
+        {
+          "crime_head": "Theft",
+          "ipc_section": "379-382",
+          "incidence_2016": 494404,
+          "crime_rate_2016": 38.8,
+          "types": {
+            "auto_theft": 214009,
+            "other_theft": 282242
+          },
+          "percentage_share": 16.6
+        },
+        {
+          "crime_head": "Criminal Trespass & Burglary",
+          "ipc_section": "453-457 r/w 380",
+          "incidence_2016": 111746,
+          "crime_rate_2016": 8.8,
+          "percentage_share": 3.8
+        },
+        {
+          "crime_head": "Extortion",
+          "ipc_section": "384-389",
+          "incidence_2016": 11615,
+          "crime_rate_2016": 0.9,
+          "percentage_share": 0.4
+        },
+        {
+          "crime_head": "Robbery",
+          "ipc_section": "392-394",
+          "incidence_2016": 31906,
+          "crime_rate_2016": 2.5,
+          "percentage_share": 1.1
+        },
+        {
+          "crime_head": "Dacoity",
+          "ipc_section": "395-398",
+          "incidence_2016": 3795,
+          "crime_rate_2016": 0.3,
+          "incidence_breakdown": {
+            "dacoity": 4065,
+            "dacoity_with_murder": 95
+          },
+          "percentage_share": 0.1
+        },
+        {
+          "crime_head": "Preparation for Dacoity",
+          "ipc_section": "399, 402",
+          "incidence_2016": 3051,
+          "crime_rate_2016": 0.2,
+          "percentage_share": 0.1
+        },
+        {
+          "crime_head": "Criminal Breach of Trust",
+          "ipc_section": "406-409",
+          "incidence_2016": 18708,
+          "crime_rate_2016": 1.5,
+          "percentage_share": 0.6
+        },
+        {
+          "crime_head": "Cheating",
+          "ipc_section": "420",
+          "incidence_2016": 109611,
+          "crime_rate_2016": 8.6,
+          "percentage_share": 3.7
+        },
+        {
+          "crime_head": "Arson",
+          "ipc_section": "435-438",
+          "incidence_2016": 11196,
+          "crime_rate_2016": 0.9,
+          "percentage_share": 0.4
+        }
+      ]
+    },
+    "offences_relating_to_documents": {
+      "total_2016": 15205,
+      "percentage_share": 0.5,
+      "crimes": [
+        {
+          "crime_head": "Counterfeiting",
+          "ipc_section": "489A-489E, 231-243, 255",
+          "incidence_2016": 1476,
+          "crime_rate_2016": 0.1,
+          "percentage_share": 0.0
+        },
+        {
+          "crime_head": "Forgery",
+          "ipc_section": "465, 468, 471",
+          "incidence_2016": 13729,
+          "crime_rate_2016": 1.1,
+          "percentage_share": 0.5
+        }
+      ]
+    },
+    "miscellaneous_crimes": {
+      "crimes": [
+        {
+          "crime_head": "Cruelty by Husband or Relatives",
+          "ipc_section": "498A",
+          "incidence_2016": 110378,
+          "crime_rate_2016": 18.0,
+          "percentage_share": 3.7
+        },
+        {
+          "crime_head": "Insult to Modesty of Women",
+          "ipc_section": "509",
+          "incidence_2016": 7305,
+          "crime_rate_2016": 1.2,
+          "percentage_share": 0.2
+        }
+      ]
+    }
+  },
+  "state_wise_statistics_2016": [
+    {
+      "state": "Uttar Pradesh",
+      "total_ipc_crimes": 282171,
+      "crime_rate": 128.7,
+      "murders": 4889,
+      "rapes": 4816,
+      "kidnapping": 15898,
+      "robbery": 284,
+      "dacoity": 5109
+    },
+    {
+      "state": "Maharashtra",
+      "total_ipc_crimes": 261714,
+      "crime_rate": 217.1,
+      "murders": 2299,
+      "rapes": 4189,
+      "kidnapping": 9333,
+      "robbery": 656,
+      "dacoity": 3
+    },
+    {
+      "state": "Madhya Pradesh",
+      "total_ipc_crimes": 264418,
+      "crime_rate": 337.9,
+      "murders": 2004,
+      "rapes": 4882,
+      "kidnapping": 7183,
+      "robbery": 125,
+      "dacoity": 76
+    },
+    {
+      "state": "Kerala",
+      "total_ipc_crimes": 260097,
+      "crime_rate": 727.5,
+      "murders": 305,
+      "rapes": 1656,
+      "kidnapping": 241,
+      "robbery": 71,
+      "dacoity": 2008
+    },
+    {
+      "state": "Tamil Nadu",
+      "total_ipc_crimes": 179896,
+      "crime_rate": 258.8,
+      "murders": 1603,
+      "rapes": 319,
+      "kidnapping": 1223,
+      "robbery": 109,
+      "dacoity": 4
+    },
+    {
+      "state": "Rajasthan",
+      "total_ipc_crimes": 180398,
+      "crime_rate": 246.2,
+      "murders": 1551,
+      "rapes": 3656,
+      "kidnapping": 5293,
+      "robbery": 66,
+      "dacoity": 133
+    },
+    {
+      "state": "West Bengal",
+      "total_ipc_crimes": 176569,
+      "crime_rate": 188.2,
+      "murders": 2044,
+      "rapes": 1110,
+      "kidnapping": 6045,
+      "robbery": 472,
+      "dacoity": 1058
+    },
+    {
+      "state": "Karnataka",
+      "total_ipc_crimes": 148402,
+      "crime_rate": 237.2,
+      "murders": 1573,
+      "rapes": 1655,
+      "kidnapping": 2916,
+      "robbery": 329,
+      "dacoity": 74
+    },
+    {
+      "state": "Gujarat",
+      "total_ipc_crimes": 147122,
+      "crime_rate": 233.2,
+      "murders": 1120,
+      "rapes": 982,
+      "kidnapping": 2784,
+      "robbery": 323,
+      "dacoity": 6
+    },
+    {
+      "state": "Bihar",
+      "total_ipc_crimes": 164163,
+      "crime_rate": 157.4,
+      "murders": 2581,
+      "rapes": 1008,
+      "kidnapping": 7324,
+      "robbery": 349,
+      "dacoity": 1364
+    },
+    {
+      "state": "Delhi",
+      "total_ipc_crimes": 209519,
+      "crime_rate": 975.0,
+      "murders": 528,
+      "rapes": 2155,
+      "kidnapping": 6619,
+      "robbery": 46,
+      "dacoity": 845
+    },
+    {
+      "state": "Andhra Pradesh",
+      "total_ipc_crimes": 106774,
+      "crime_rate": 206.4,
+      "murders": 1113,
+      "rapes": 994,
+      "kidnapping": 917,
+      "robbery": 62,
+      "dacoity": 190
+    },
+    {
+      "state": "Telangana",
+      "total_ipc_crimes": 108991,
+      "crime_rate": 295.8,
+      "murders": 1046,
+      "rapes": 1278,
+      "kidnapping": 1302,
+      "robbery": 62,
+      "dacoity": 5
+    }
+  ],
+  "top_crimes_by_incidence_2016": [
+    { "rank": 1, "crime": "Other IPC Crimes", "incidence": 1076613, "percentage": 36.2 },
+    { "rank": 2, "crime": "Theft", "incidence": 494404, "percentage": 16.6 },
+    { "rank": 3, "crime": "Causing Injuries by Rash Driving", "incidence": 348914, "percentage": 11.7 },
+    { "rank": 4, "crime": "Causing Death by Negligence", "incidence": 140215, "percentage": 4.7 },
+    { "rank": 5, "crime": "Criminal Trespass & Burglary", "incidence": 111746, "percentage": 3.8 },
+    { "rank": 6, "crime": "Cruelty by Husband", "incidence": 110378, "percentage": 3.7 },
+    { "rank": 7, "crime": "Cheating", "incidence": 109611, "percentage": 3.7 },
+    { "rank": 8, "crime": "Grievous Hurt", "incidence": 89039, "percentage": 3.0 },
+    { "rank": 9, "crime": "Kidnapping & Abduction", "incidence": 88008, "percentage": 3.0 },
+    { "rank": 10, "crime": "Assault on Women", "incidence": 84746, "percentage": 2.8 }
+  ]
+}
