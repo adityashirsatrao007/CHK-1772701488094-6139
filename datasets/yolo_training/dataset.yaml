@@ -1,0 +1,9 @@
+path: ../datasets/yolo_training
+train: images/train
+val: images/val
+
+names:
+  0: Police Station
+  1: Year
+  2: Statutes
+  3: Complainant Name
