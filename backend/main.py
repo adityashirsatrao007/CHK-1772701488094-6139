@@ -51,7 +51,7 @@ def read_root():
     return {"message": "Multimodal Evidence Analysis API is running."}
 
 from typing import Dict, Any, Optional
-from app.routes.auth import get_db_connection
+from app.routes.auth import get_db_connection, release_db_connection
 from psycopg2.extras import RealDictCursor
 import logging
 
@@ -108,7 +108,7 @@ def get_cases(email: Optional[str] = None):
             cur.close()
             cases = [row['case_data'] for row in fallback_rows]
 
-        conn.close()
+        release_db_connection(conn)
 
         if not cases and email in demo_accounts:
             try:
@@ -139,7 +139,7 @@ def create_case(new_case: Dict[str, Any], email: Optional[str] = "demo@nyaya.ai"
         """, (email, case_id, json.dumps(new_case)))
         conn.commit()
         cur.close()
-        conn.close()
+        release_db_connection(conn)
         
         return {"message": "Case securely stored in PostgreSQL", "case_id": case_id}
     except Exception as e:
@@ -161,7 +161,7 @@ def update_case(case_id: str, updated_data: Dict[str, Any], email: Optional[str]
         
         if not row:
             cur.close()
-            conn.close()
+            release_db_connection(conn)
             return {"error": "Case not found or unauthorized access"}
             
         current_data = row['case_data']
@@ -170,7 +170,7 @@ def update_case(case_id: str, updated_data: Dict[str, Any], email: Optional[str]
         cur.execute("UPDATE cases SET case_data = %s WHERE case_id = %s", (json.dumps(current_data), case_id))
         conn.commit()
         cur.close()
-        conn.close()
+        release_db_connection(conn)
         
         return {"message": "Case elegantly updated via PostgreSQL API"}
     except Exception as e:
@@ -189,7 +189,7 @@ def delete_case(case_id: str, email: Optional[str] = None):
         deleted_count = cur.rowcount
         conn.commit()
         cur.close()
-        conn.close()
+        release_db_connection(conn)
         
         if deleted_count > 0:
              return {"message": "Case deleted permanently from DB"}
@@ -292,17 +292,8 @@ async def analyze_evidence(file: UploadFile = File(...), context: str = Form("ev
         except Exception as e:
             # If the OCR fails (e.g. they uploaded a PDF format instead of image)
             print(f"OCR Pipeline Exception: {e}")
-            
-            return AnalysisResponse(
-                status="error",
-                evidence_type="Invalid Document Format",
-                confidence_score=0.0,
-                is_manipulated=False,
-                explanation=f"Document Analysis Failed: Could not process the uploaded file securely ({str(e)}). Please ensure you are uploading a clear Image (PNG/JPG) of a valid First Information Report.",
-                key_factors=["Unsupported or corrupted file format"],
-                detected_ipcs=[],
-                image_url=saved_fir_image_url,
-            )
+            from fastapi import HTTPException
+            raise HTTPException(status_code=500, detail=f"Document Analysis Failed: Could not process the uploaded file securely ({str(e)}).")
 
         
     contents = await file.read()

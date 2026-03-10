@@ -8,3 +8,4 @@ opencv-python
 transformers
 langdetect
 deep-translator
+python-dotenv

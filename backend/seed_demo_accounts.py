@@ -1,7 +1,10 @@
 import psycopg2
 import bcrypt
+import os
+from dotenv import load_dotenv
 
-DATABASE_URL = 'postgresql://neondb_owner:npg_NmJBE2dy6CDn@ep-soft-leaf-a1iff04v-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require'
+load_dotenv()
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 demo_users = [
     {
